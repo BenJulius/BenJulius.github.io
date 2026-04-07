@@ -5,34 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ben Julius | IT Support Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Ben Julius</h1>
-            <p class="subtitle">IT Support Associate | Cloud & Infrastructure</p>
-        </header>
 
-        <section class="card">
-            <h2>☁️ Featured Project: AWS EC2 Deployment</h2>
-            <p>Provisioned an Ubuntu 24.04 LTS instance with custom Security Groups and RSA key authentication.</p>
-            <span class="badge">AWS</span> <span class="badge">Linux</span> <span class="badge">Security</span>
-        </section>
+    <nav>
+        <div class="nav-container">
+            <span class="logo">BJ</span>
+            <ul>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <section class="card">
-            <h2>🛠 Technical Skills</h2>
-            <div class="skills-grid">
-                <ul>
-                    <li><strong>OS:</strong> Windows, Linux</li>
-                    <li><strong>Cloud:</strong> AWS (EC2, S3)</li>
-                    <li><strong>Tools:</strong> GitHub, SSH, CLI</li>
-                </ul>
+    <header class="hero">
+        <h1>Ben Julius</h1>
+        <p>IT Support Associate | Cloud & Operations Specialist</p>
+        <div class="hero-btns">
+            <a href="https://github.com/BenJulius/BenJulius.github.io/raw/main/Ben.Julius.Resume.pdf" class="btn primary">
+                <i class="fas fa-file-pdf"></i> View Resume
+            </a>
+            <a href="https://www.linkedin.com/in/ben-julius/" class="btn secondary">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section id="projects">
+            <h2>Technical Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>AWS Linux VM Deployment</h3>
+                    <p>Provisioned an Ubuntu 24.04 LTS instance in AWS EC2. Configured Security Groups for SSH/HTTP access and managed remote connectivity via RSA key pairs.</p>
+                    <div class="tags">
+                        <span>AWS</span> <span>Ubuntu</span> <span>Cloud Security</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Hardware Diagnostics & RCA</h3>
+                    <p>Utilized Root Cause Analysis (RCA) to identify and resolve critical hardware failures, ensuring system uptime and operational safety.</p>
+                    <div class="tags">
+                        <span>Troubleshooting</span> <span>Hardware</span> <span>Logistics</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <footer>
-            <a href="https://github.com/BenJulius/BenJulius.github.io/raw/main/Ben.Julius.Resume.pdf" class="btn">Download Resume (PDF)</a>
-        </footer>
-    </div>
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Cloud & Infrastructure</h4>
+                    <ul>
+                        <li>AWS (EC2, S3)</li>
+                        <li>Virtual Machines (Ubuntu)</li>
+                        <li>Network Security Groups</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Support & Admin</h4>
+                    <ul>
+                        <li>Windows/Linux OS</li>
+                        <li>Hardware Diagnostics</li>
+                        <li>Active Directory (Learning)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Tools & Operations</h4>
+                    <ul>
+                        <li>Git & GitHub</li>
+                        <li>CLI (Bash)</li>
+                        <li>Operational Excellence</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/ben-julius/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="mailto:iambenjulius@gmail.com"><i class="fas fa-envelope"></i> iambenjulius@gmail.com</a>
+                <a href="https://github.com/BenJulius" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Ben Julius. Built with HTML/CSS.</p>
+    </footer>
+
 </body>
 </html>
