@@ -1,14 +1,187 @@
-/* Add this to your existing CSS or replace the relevant sections */
+/* Ben Julius | IT Support Portfolio 
+   Global Theme & Variables 
+*/
+:root {
+    --bg: #0f172a;           /* Deep Navy */
+    --card-bg: #1e293b;      /* Slate Blue/Gray */
+    --text: #f8fafc;         /* Off-White */
+    --text-dim: #94a3b8;     /* Muted Gray */
+    --accent: #38bdf8;       /* Tech Blue */
+    --border: #334155;       /* Subtle Border */
+    --nav-bg: rgba(15, 23, 42, 0.9);
+}
 
-.skills-grid {
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- NAVIGATION --- */
+nav {
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--accent);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    margin: 0;
+}
+
+nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+.hero p {
+    color: var(--accent);
+    font-size: 1.25rem;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.hero-btns {
+    margin-top: 30px;
+}
+
+/* --- BUTTONS (Universal) --- */
+.btn {
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.primary {
+    background: var(--accent);
+    color: #0f172a;
+    border: none;
+}
+
+.primary:hover {
+    background: #7dd3fc;
+    transform: translateY(-2px);
+}
+
+.secondary {
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* --- PROJECTS & SKILLS GRID --- */
+section {
+    padding: 80px 0;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    border-left: 4px solid var(--accent);
+    padding-left: 15px;
+}
+
+.project-grid, .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.project-card, .skill-category {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 30px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.tags {
     margin-top: 20px;
 }
 
+.tags span {
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--accent);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    margin-right: 8px;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+/* --- SKILLS SPECIFICS --- */
 .skill-category h4 {
     color: var(--accent);
+    margin-top: 0;
+    font-size: 1.2rem;
     border-bottom: 1px solid var(--border);
     padding-bottom: 10px;
 }
@@ -16,44 +189,71 @@
 .skill-category ul {
     list-style: none;
     padding: 0;
+    margin: 15px 0 0;
 }
 
 .skill-category li {
-    padding: 8px 0;
-    border-bottom: 1px solid #1e293b;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
+/* --- CONTACT BUTTONS (The Grid) --- */
 #contact {
     text-align: center;
-    padding: 60px 0;
 }
 
-.contact-links {
+#contact p {
+    color: var(--text-dim);
+    margin-bottom: 40px;
+}
+
+.contact-grid {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    font-size: 1.1rem;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.contact-links a {
+.contact-btn {
+    min-width: 200px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
     color: var(--text);
+    padding: 18px 30px;
+    border-radius: 12px;
+    font-size: 1.1rem;
     text-decoration: none;
-    transition: color 0.3s;
 }
 
-.contact-links a:hover {
+.contact-btn i {
+    font-size: 1.3rem;
+    margin-right: 12px;
     color: var(--accent);
 }
 
-footer {
-    text-align: center;
-    padding: 40px;
-    border-top: 1px solid var(--border);
-    font-size: 0.9rem;
-    color: #64748b;
+.contact-btn:hover {
+    background-color: var(--accent);
+    color: #0f172a;
+    border-color: var(--accent);
+    transform: scale(1.05);
 }
 
-/* Icon Spacing */
-i {
-    margin-right: 8px;
+.contact-btn:hover i {
+    color: #0f172a;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 60px 0;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 0.9rem;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .contact-btn { width: 100%; }
+    .project-grid { grid-template-columns: 1fr; }
 }
