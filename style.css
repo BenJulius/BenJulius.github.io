@@ -1,6 +1,5 @@
 /* Ben Julius | IT Support Portfolio */
 :root {
-    /* Dark Mode (Default) */
     --bg: #0f172a;           
     --card-bg: #1e293b;      
     --text: #f8fafc;         
@@ -10,7 +9,6 @@
     --nav-bg: rgba(15, 23, 42, 0.9);
 }
 
-/* Light Mode Overrides */
 body.light-mode {
     --bg: #f1f5f9;           
     --card-bg: #ffffff;      
@@ -35,11 +33,11 @@ body {
     margin: 0;
 }
 
-/* Container for scannable layout and edge protection */
+/* FIXED: Increased padding to prevent edge-clipping */
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 40px; 
+    padding: 0 40px; /* Comfortably pushes content in from sides */
 }
 
 /* --- NAVIGATION --- */
@@ -53,13 +51,14 @@ nav {
     z-index: 100;
 }
 
+/* FIXED: Added inner padding to the nav container */
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 40px; 
+    padding: 0 40px; /* Keeps logo and nav links away from screen edges */
 }
 
 .logo {
@@ -68,10 +67,6 @@ nav {
     color: var(--accent);
     user-select: none;
     transition: transform 0.2s ease;
-}
-
-.logo:active {
-    transform: scale(0.9);
 }
 
 nav ul {
@@ -110,10 +105,6 @@ nav a:hover { color: var(--accent); }
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.profile-pic:hover {
-    transform: scale(1.08);
-}
-
 .hero h1 { font-size: 3.8rem; margin: 0; letter-spacing: -2px; font-weight: 800; }
 .hero p { color: var(--accent); font-size: 1.4rem; margin-top: 12px; font-weight: 500; }
 
@@ -134,13 +125,15 @@ body:not(.light-mode) .primary { color: #0f172a; }
 
 .secondary { border: 1px solid var(--border); color: var(--text); }
 .primary:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2); }
-.secondary:hover { border-color: var(--accent); color: var(--accent); }
 
-/* --- FULL BOX CLICKABLE PROJECT CARD --- */
-.project-card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
+/* --- PROJECTS --- */
+section { padding: 100px 0; }
+h2 { font-size: 2.4rem; margin-bottom: 50px; border-left: 6px solid var(--accent); padding-left: 20px; font-weight: 800; }
+
+.project-grid, .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
 }
 
 .project-card, .skill-category {
@@ -150,29 +143,18 @@ body:not(.light-mode) .primary { color: #0f172a; }
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    transition: all 0.3s ease;
 }
 
-.project-card-link:hover .project-card {
-    transform: translateY(-10px);
-    border-color: var(--accent);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+.project-card:hover { transform: translateY(-10px); border-color: var(--accent); }
+
+.title-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    margin-bottom: 18px;
 }
 
-.project-card-link:hover h3 {
-    color: var(--accent);
-}
-
-/* --- PROJECTS & SKILLS GRID --- */
-section { padding: 100px 0; }
-h2 { font-size: 2.4rem; margin-bottom: 50px; border-left: 6px solid var(--accent); padding-left: 20px; font-weight: 800; }
-
-.project-grid, .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 35px;
-}
+.title-link h3 { margin: 0; font-size: 1.6rem; font-weight: 700; }
 
 .tags {
     margin-top: auto;
@@ -190,7 +172,6 @@ h2 { font-size: 2.4rem; margin-bottom: 50px; border-left: 6px solid var(--accent
     font-size: 0.85rem;
     font-weight: 600;
     border: 1px solid rgba(56, 189, 248, 0.2);
-    white-space: nowrap;
 }
 
 /* --- EDUCATION --- */
@@ -214,11 +195,6 @@ h2 { font-size: 2.4rem; margin-bottom: 50px; border-left: 6px solid var(--accent
     border-radius: 12px;
 }
 
-/* --- SKILLS CATEGORIES --- */
-.skill-category h4 { color: var(--accent); margin: 0 0 20px 0; border-bottom: 1px solid var(--border); padding-bottom: 12px; font-size: 1.3rem; }
-.skill-category ul { list-style: none; padding: 0; }
-.skill-category li { padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 1rem; }
-
 /* --- CONTACT --- */
 .contact-grid { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; }
 .contact-btn {
@@ -232,17 +208,21 @@ h2 { font-size: 2.4rem; margin-bottom: 50px; border-left: 6px solid var(--accent
     align-items: center;
     gap: 15px;
     font-weight: 600;
-    transition: all 0.3s ease;
 }
-
 .contact-btn:hover { background: var(--accent); color: #ffffff; transform: translateY(-5px); }
 
 /* --- FOOTER --- */
 footer { text-align: center; padding: 100px 0; border-top: 1px solid var(--border); color: var(--text-dim); }
 
-/* --- MOBILE RESPONSIVE --- */
+/* --- MOBILE ADJUSTMENTS --- */
 @media (max-width: 768px) {
+    /* FIXED: Adjusted padding for smaller screens */
     .container, .nav-container { padding: 0 25px; }
+    
+    .nav-container { padding-top: 10px; padding-bottom: 10px; }
+    nav ul { gap: 15px; }
+    nav a { font-size: 0.85rem; }
+    
     .hero h1 { font-size: 2.8rem; }
     .hero-btns { flex-direction: column; align-items: stretch; }
     .education-content { flex-direction: column; text-align: center; padding: 35px; }
