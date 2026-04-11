@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ben Julius | IT Support Portfolio</title>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -12,6 +11,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div class="gradient-bg">
+        <div class="gradients-container">
+            <div class="g1"></div>
+            <div class="g2"></div>
+            <div class="g3"></div>
+        </div>
+    </div>
 
     <nav>
         <div class="nav-container">
@@ -31,7 +38,7 @@
                 <img src="./headshot.png" alt="Ben Julius" class="profile-pic">
             </div>
             <h1>Ben Julius</h1>
-            <p>Process Assistant OTR | IT Grad</p>
+            <p class="hero-subtitle">Process Assistant OTR | IT Grad</p>
             <div class="hero-btns">
                 <a href="https://github.com/BenJulius/BenJulius.github.io/raw/main/Ben.Julius.Resume.pdf" class="btn primary">
                     <i class="fas fa-file-pdf"></i> View Resume
@@ -44,12 +51,11 @@
     </header>
 
     <main class="container">
-        
         <section id="projects">
             <h2>Technical Projects</h2>
             <div class="project-grid">
                 <div class="project-card">
-                    <a href="https://github.com/BenJulius/vuln-scanner-lite" target="_blank" class="title-link">
+                    <a href="https://github.com/BenJulius/vuln-scanner-lite" target="_blank" class="project-link">
                         <h3>Vulnerability Scanner Lite</h3>
                     </a>
                     <p>Developed a conceptual, lightweight vulnerability scanner in Python. Designed to identify open ports and service versions for security baseline assessments.</p>
@@ -59,7 +65,9 @@
                 </div>
 
                 <div class="project-card">
-                    <h3>AWS Linux VM Deployment</h3>
+                    <div class="project-link">
+                        <h3>AWS Linux VM Deployment</h3>
+                    </div>
                     <p>Provisioned an Ubuntu 24.04 LTS instance in AWS EC2. Configured Security Groups for SSH/HTTP access and managed remote connectivity via RSA key pairs.</p>
                     <div class="tags">
                         <span>AWS</span> <span>Ubuntu</span> <span>Cloud Security</span>
@@ -67,7 +75,9 @@
                 </div>
 
                 <div class="project-card">
-                    <h3>Hardware Diagnostics & RCA</h3>
+                    <div class="project-link">
+                        <h3>Hardware Diagnostics & RCA</h3>
+                    </div>
                     <p>Utilized Root Cause Analysis (RCA) to resolve critical hardware failures, ensuring system uptime and operational safety in high-pressure environments.</p>
                     <div class="tags">
                         <span>Troubleshooting</span> <span>Hardware</span> <span>RCA</span>
@@ -132,7 +142,6 @@
                 </a>
             </div>
         </section>
-
     </main>
 
     <footer>
@@ -144,20 +153,13 @@
     <script>
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
-
         themeToggle.addEventListener('click', () => {
             body.classList.toggle('light-mode');
-            
-            // Optional: Save preference to local storage
-            const isLight = body.classList.contains('light-mode');
-            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
         });
-
-        // Load saved theme
         if (localStorage.getItem('theme') === 'light') {
             body.classList.add('light-mode');
         }
     </script>
-
 </body>
 </html>
