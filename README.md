@@ -14,7 +14,7 @@ This repository contains the source code for my professional portfolio. It serve
 
 ## Project Directories
 
-* **[Delivery Performance Tracker](https://github.com/BenJulius/Delivery-Performance-and-DPMO-Tracker)):** Last mile KPI logistics dashboard.
+* **[Delivery Performance Tracker](https://github.com/BenJulius/Delivery-Performance-and-DPMO-Tracker):** Last mile KPI logistics dashboard.
 * **[Focus Timer](https://github.com/BenJulius/focus-timer):** A timer built to make breaks rewarding.
 * **[Shadow Log](https://github.com/BenJulius/shadow-log):** System event capture and archival utility.
 * **[WinOps Sentinel](https://github.com/BenJulius/winops-sentinel):** PowerShell-driven operational monitoring.
